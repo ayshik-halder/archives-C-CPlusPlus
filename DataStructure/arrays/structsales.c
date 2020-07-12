@@ -8,7 +8,7 @@
  
  struct structsales
  {
-     int * Pdt;
+     int pdt[3];
  };
 
  void main(){
