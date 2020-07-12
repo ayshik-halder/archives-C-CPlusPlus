@@ -12,7 +12,7 @@
  };
 
  void main(){
-
+     
      struct structsales s[100];
      printf("\n Enter no. of Salesman : ");
      int n, i, j, sum = 0;
