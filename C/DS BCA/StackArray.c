@@ -2,9 +2,6 @@
  * C Program to Implement a Queue using an Array
  */
 #include<stdio.h>
-#include<conio.h>
-#include<stdlib.h>
-
 #define size 10
 struct stack {
    int s[size];

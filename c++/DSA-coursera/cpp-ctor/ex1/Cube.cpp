@@ -1,4 +1,4 @@
-/**
+ /**
  * Simple C++ class for representing a Cube (with a custom constructor).
  * 
  * @author
@@ -9,7 +9,7 @@
 
 namespace uiuc {
   Cube::Cube() {
-    length_ = 1;
+    length_= 1 ;
   }
 
   double Cube::getVolume() {
