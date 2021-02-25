@@ -12,35 +12,6 @@ void display();
 int queue_array[MAX];
 int rear = - 1;
 int front = - 1;
-int main()
-{
-    int choice;
-    while (1)
-    {
-        printf("1.PUSH \n");
-        printf("2.POP \n");
-        printf("3.Display \n");
-        printf("4.Quit \n");
-        printf("Enter your choice : ");
-        scanf("%d", &choice);
-        switch (choice)
-        {
-            case 1:
-            insert();
-            break;
-            case 2:
-            delete();
-            break;
-            case 3:
-            display();
-            break;
-            case 4:
-            exit(0);
-            default:
-            printf("Wrong choice \n");
-        } 
-    } 
-} 
  
 void insert()
 {
@@ -89,6 +60,36 @@ void display()
 
 
 
+
+int main()
+{
+    int choice;
+    while (1)
+    {
+        printf("1.PUSH \n");
+        printf("2.POP \n");
+        printf("3.Display \n");
+        printf("4.Quit \n");
+        printf("Enter your choice : ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+            case 1:
+            insert();
+            break;
+            case 2:
+            delete();
+            break;
+            case 3:
+            display();
+            break;
+            case 4:
+            exit(0);
+            default:
+            printf("Wrong choice \n");
+        } 
+    } 
+} 
 
 
 

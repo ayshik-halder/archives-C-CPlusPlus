@@ -1,6 +1,4 @@
-/*
- * C Program to Implement a Queue using an Array
- */
+/* Stack using an Array */
 #include<stdio.h>
 #define size 10
 struct stack {
@@ -53,11 +51,11 @@ int main() {
    do {
       printf("\nMain Menu");
       printf("\n1.Push \n2.Pop \n3.Display \n4.exit");
-      printf("\nEnter Your Choice");
+      printf("\nEnter Your Choice : ");
       scanf("%d", &choice);
       switch (choice) {
       case 1:
-         printf("\nEnter The item to be pushed");
+         printf("\nEnter The item to be pushed : ");
          scanf("%d", &item);
          if (stfull())
             printf("\nStack is Full!");

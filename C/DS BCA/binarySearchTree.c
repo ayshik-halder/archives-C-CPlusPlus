@@ -3,16 +3,13 @@
 #include <stdlib.h>
 
 typedef struct TreeNode {
-    // TreeNode structure for the Binary Search Tree (BST)
-    // A BST has the left subtree being less than the root,
-    // while the right subtree is greater than the root
-    int data; // A Node contains data
-    struct TreeNode* left, *right; // As well as pointers to the left and right children
-    int is_leaf; // Check whether a node is a leaf node or not
+	
+    int data; 
+    struct TreeNode* left, *right; 
+    int is_leaf; 
 }TreeNode;
 
 TreeNode* make_treenode(int data) {
-    // Construct a treenode pointer using data
     TreeNode* node = (TreeNode*) calloc (1, sizeof(TreeNode));
     node->data = data;
     node->left = node->right = NULL;
@@ -21,50 +18,39 @@ TreeNode* make_treenode(int data) {
 }
 
 TreeNode* insert_bst(TreeNode* root, int data) {
-    // Inserts data into it's appropriate position
-    // in the BST
+
     if (!root) {
-        // Make the root node
+    
         root = make_treenode(data);
         return root;
     }
     else {
-        // We need to insert to the existing root
+        
         TreeNode* node = make_treenode(data);
         TreeNode* temp = root;
         while (temp) {
-            if (temp->is_leaf) {
-                // Inserting at a leaf node
+            if (temp->is_leaf) {             
                 if (temp->data > data) {
-                    // Insert to the left
                     temp->left = node;
                     temp->is_leaf = 0;
                     break;
                 }
                 else {
-                    // Insert to the right
                     temp->right = node;
                     temp->is_leaf = 0;
                     break;
                 }
             }
             else {
-                // Non leaf node
                 if (temp->data > data) {
-                    // Go to the left subtree
                     if (temp->left == NULL) {
-                        // If the left subtree is empty, add it here
-                        // and break, since we've finished insertion
                         temp->left = node;
                         break;
                     }
                     temp = temp->left;
                 }
                 else {
-                    // Go to the right subtree
                     if (temp->right == NULL) {
-                        // If the left subtree is empty, add it here
-                        // and break, since we've finished insertion
                         temp->right = node;
                         break;
                     }
@@ -118,20 +104,25 @@ void print_bst(TreeNode* root) {
 
 
 int main() {
-    // Driver function for performing Binary Search Tree
-    // operations
-    TreeNode* root = make_treenode(45);
-    root = insert_bst(root, 20);
-    root = insert_bst(root, 15);
-    root = insert_bst(root, 60);
-    root = insert_bst(root, 40);
-    root = insert_bst(root, 50);
-    root = insert_bst(root, 70);
+
+    int n=0,i, x=0, search,base;
+	printf("\n Enter no. of nodes ");
+	scanf("%d",&n);
+	printf("Enter root value");
+	scanf("%d",&base);
+    TreeNode* root = make_treenode(base);
+    for(i=0;i<n;i++)
+    {
+    	printf("\n Enter node %d : ",i+1);
+    	scanf("%d",&x);
+    	root = insert_bst(root, x);
+    	
+	}
     print_bst(root);
     printf("\n");
-    print_search(root, 15);
-    print_search(root, 70);
-    print_search(root, 35);
+    printf("\n Enter no. to search : ");
+    scanf("%d",&search);
+	print_search(root, search);
     free_bst(root);
     return 0;
 }

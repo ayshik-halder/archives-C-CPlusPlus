@@ -1,13 +1,10 @@
 /* C Program to implement circular queue using arrays  */
-
 #include<stdio.h>
 #include<stdlib.h>
 #define MAX 10
-
 int cqueue_arr[MAX];
 int front=-1;
 int rear=-1;
-
 void display( );
 void insert(int item);
 int del();
@@ -48,12 +45,10 @@ int main()
                         exit(1);
                 default:
                         printf("\nWrong choice\n");
-                }/*End of switch*/
-        }/*End of while */
-
+                }
+        }
         return 0;
-
-}/*End of main()*/
+}
 
 void insert(int item)
 {
@@ -65,12 +60,12 @@ void insert(int item)
         if(front == -1 )
                 front=0;
 
-        if(rear==MAX-1)/*rear is at last position of queue*/
+        if(rear==MAX-1)
                 rear=0;
         else
                 rear=rear+1;
         cqueue_arr[rear]=item ;
-}/*End of insert()*/
+}
 
 int del()
 {
@@ -81,7 +76,7 @@ int del()
                 exit(1);
         }
         item=cqueue_arr[front];
-        if(front==rear) /* queue has only one element */
+        if(front==rear) 
         {
                 front=-1;
                 rear=-1;
@@ -91,7 +86,7 @@ int del()
         else
                 front=front+1;
         return item;
-}/*End of del() */
+}
 
 int isEmpty()
 {
@@ -99,7 +94,7 @@ int isEmpty()
                 return 1;
         else
                 return 0;
-}/*End of isEmpty()*/
+}
 
 int isFull()
 {
@@ -107,7 +102,7 @@ int isFull()
                 return 1;
         else
                 return 0;
-}/*End of isFull()*/
+}
 
 int peek()
 {
@@ -117,7 +112,7 @@ int peek()
                 exit(1);
         }
         return cqueue_arr[front];
-}/*End of peek()*/
+}
 
 void display()
 {
@@ -143,4 +138,4 @@ void display()
                         printf("%d ",cqueue_arr[i++]);
         }
         printf("\n");
-}/*End of display() */
+}

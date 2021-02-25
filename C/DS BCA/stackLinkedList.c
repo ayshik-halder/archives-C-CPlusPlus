@@ -17,9 +17,9 @@ void main ()
     printf("\n----------------------------------------------\n");  
     while(choice != 4)  
     {  
-        printf("\n\nChose one from the below options...\n");  
+        printf("\nChose one from the below options...");  
         printf("\n1.Push\n2.Pop\n3.Show\n4.Exit");  
-        printf("\n Enter your choice \n");        
+        printf("\n Enter your choice : ");        
         scanf("%d",&choice);  
         switch(choice)  
         {  
@@ -45,7 +45,7 @@ void main ()
             }  
             default:  
             {  
-                printf("Please Enter valid choice ");  
+                printf("Please Enter valid choice : ");  
             }   
     };  
 }  
@@ -60,7 +60,7 @@ void push ()
     }  
     else   
     {  
-        printf("Enter the value");  
+        printf("Enter the value : ");  
         scanf("%d",&val);  
         if(head==NULL)  
         {         

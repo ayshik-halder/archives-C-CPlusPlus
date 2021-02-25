@@ -1,12 +1,11 @@
-#include <stdio.h> 
-  
+#include <stdio.h>   
 int main() 
 { 
     int arr[100];
     int i,z,x,n,r,l;
-    printf("Enter no. of element");
+    printf("Enter no. of element: ");
     scanf("%d",&z);
-	printf("Enter element") ;
+	printf("Enter element: ") ;
 	for(i=0;i<z;i++)
 	scanf("%d",&arr[i]);
 
@@ -15,10 +14,9 @@ int main()
 	printf("The sorted array:\n");
        for (i = 0; i < z; i++)
      printf("%d\t", arr[i]);
-    
-    printf("Enter element to search");
+
+    printf("Enter element to search: ");
 	scanf("%d",&x);
-	
 	r=z-1;                     //Binary searching
 	l=0;
    
@@ -50,7 +48,7 @@ int main()
 void bubble_sort(int a[], int n)
  {
     int i = 0, j = 0, tmp;
-                                   //bubble sort algorithm
+    //bubble sort algorithm
     for (i = 0; i < n; i++) 
 	{   
         for (j = 0; j < n - i - 1; j++) 

@@ -1,4 +1,3 @@
-/* Insertion sort ascending order */
 #include <stdio.h>
 
 int main()
@@ -12,7 +11,7 @@ int main()
 
   for (c = 0; c < n; c++)
     scanf("%d", &array[c]);
-
+  /* Insertion sort ascending order */
   for (c = 1 ; c <= n - 1; c++) {
     t = array[c];
 

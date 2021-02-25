@@ -13,51 +13,6 @@ void DeQueue();
 void display();
 void Front();
 void QueueSize();
-int main()
-{
-    int choice, value;
-    printf("\n*** Queue Implementation using Linked List ***\n");
-    while(1)
-    {
-        printf("\n****** MENU ******\n");
-        printf("1. Insert in Queue\n");
-        printf("2. Delete From Queue\n");
-        printf("3. Display Queue\n");
-        printf("4. Front of the Queue\n");
-        printf("5. Size of Queue\n");
-        printf("6. Exit\n");
-
-        printf("Enter your choice: ");
-        scanf("%d",&choice);
-
-        switch(choice)
-        {
-         case 1:
-                printf("Insert the value you want to enter: ");
-                scanf("%d", &value);
-
-                EnQueue(value);
-                break;
-         case 2:
-                DeQueue();
-                break;
-         case 3:
-                display();
-                break;
-         case 4:
-                Front();
-                break;
-         case 5:
-                QueueSize();
-                break;
-         case 6:
-                exit(0);
-         default:
-                printf("\nInvalid Selection!!..Select valid number please!!\n");
-        };
-    }
-   return 0;
-}
 
 void EnQueue(int value)
 {
@@ -128,4 +83,50 @@ void QueueSize()
         }
         printf("\n Size of the queue is %d \n",count+1);
     }
+}
+
+int main()
+{
+    int choice, value;
+    printf("\n*** Queue Implementation using Linked List ***\n");
+    while(1)
+    {
+        printf("\n****** MENU ******\n");
+        printf("1. Insert in Queue\n");
+        printf("2. Delete From Queue\n");
+        printf("3. Display Queue\n");
+        printf("4. Front of the Queue\n");
+        printf("5. Size of Queue\n");
+        printf("6. Exit\n");
+
+        printf("Enter your choice: ");
+        scanf("%d",&choice);
+
+        switch(choice)
+        {
+         case 1:
+                printf("Insert the value you want to enter: ");
+                scanf("%d", &value);
+
+                EnQueue(value);
+                break;
+         case 2:
+                DeQueue();
+                break;
+         case 3:
+                display();
+                break;
+         case 4:
+                Front();
+                break;
+         case 5:
+                QueueSize();
+                break;
+         case 6:
+                exit(0);
+         default:
+                printf("\nInvalid Selection!!..Select valid number please!!\n");
+        };
+    }
+   return 0;
 }

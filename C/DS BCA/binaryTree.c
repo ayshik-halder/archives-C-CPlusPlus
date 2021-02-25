@@ -1,72 +1,115 @@
-// Tree traversal in C
 
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node {
-  int item;
-  struct node* left;
-  struct node* right;
-};
+typedef struct TreeNode {
+	
+    int data; 
+    struct TreeNode* left, *right; 
+    int is_leaf; 
+}TreeNode;
 
-// Inorder traversal
-void inorderTraversal(struct node* root) {
-  if (root == NULL) return;
-  inorderTraversal(root->left);
-  printf("%d ->", root->item);
-  inorderTraversal(root->right);
+TreeNode* make_treenode(int data) {
+    TreeNode* node = (TreeNode*) calloc (1, sizeof(TreeNode));
+    node->data = data;
+    node->left = node->right = NULL;
+    node->is_leaf = 1;
+    return node;
 }
 
-// Preorder traversal
-void preorderTraversal(struct node* root) {
-  if (root == NULL) return;
-  printf("%d ->", root->item);
-  preorderTraversal(root->left);
-  preorderTraversal(root->right);
+TreeNode* insert_bst(TreeNode* root, int data) {
+
+    if (!root) {
+    
+        root = make_treenode(data);
+        return root;
+    }
+    else {
+        
+        TreeNode* node = make_treenode(data);
+        TreeNode* temp = root;
+        while (temp) {
+            if (temp->is_leaf) {             
+                if (temp->data > data) {
+                    temp->left = node;
+                    temp->is_leaf = 0;
+                    break;
+                }
+                else {
+                    temp->right = node;
+                    temp->is_leaf = 0;
+                    break;
+                }
+            }
+            else {
+                if (temp->data > data) {
+                    if (temp->left == NULL) {
+                        temp->left = node;
+                        break;
+                    }
+                    temp = temp->left;
+                }
+                else {
+                    if (temp->right == NULL) {
+                        temp->right = node;
+                        break;
+                    }
+                    temp = temp->right;
+                }
+            }
+        }
+    }
+    return root;
 }
 
-// Postorder traversal
-void postorderTraversal(struct node* root) {
-  if (root == NULL) return;
-  postorderTraversal(root->left);
-  postorderTraversal(root->right);
-  printf("%d ->", root->item);
+int search_bst(TreeNode* root, int target) {
+    // Searches for target in the BST
+    if (!root)
+        return 0;
+    if (root->data == target)
+        return 1;
+    else if (root->data > target)
+        return search_bst(root->left, target);
+    else
+        return search_bst(root->right, target);
+    return 0;
 }
 
-// Create a new Node
-struct node* createNode(value) {
-  struct node* newNode = malloc(sizeof(struct node));
-  newNode->item = value;
-  newNode->left = NULL;
-  newNode->right = NULL;
-
-  return newNode;
+void free_bst(TreeNode* root) {
+    // Frees the complete BST from memory
+    if (!root)
+        return;
+    free_bst(root->left);
+    free_bst(root->right);
+    free(root);
 }
 
-// Insert on the left of the node
-struct node* insertLeft(struct node* root, int value) {
-  root->left = createNode(value);
-  return root->left;
+void print_bst(TreeNode* root) {
+    // Prints the BST in an inorder traversal
+    if (!root)
+        return;
+    print_bst(root->left);
+    printf("Node: %d -> ", root->data);
+    print_bst(root->right);
 }
 
-// Insert on the right of the node
-struct node* insertRight(struct node* root, int value) {
-  root->right = createNode(value);
-  return root->right;
-}
 
 int main() {
-  struct node* root = createNode(1);
-  insertLeft(root, 2);
-  insertRight(root, 3);
-  insertLeft(root->left, 4);
 
-  printf("Inorder traversal \n");
-  inorderTraversal(root);
-
-  printf("\nPreorder traversal \n");
-  preorderTraversal(root);
-
-  printf("\nPostorder traversal \n");
-  postorderTraversal(root);
+    int n=0,i, x=0, search,base;
+	printf("\n Enter no. of nodes ");
+	scanf("%d",&n);
+	printf("Enter root value");
+	scanf("%d",&base);
+    TreeNode* root = make_treenode(base);
+    for(i=0;i<n;i++)
+    {
+    	printf("\n Enter node %d : ",i+1);
+    	scanf("%d",&x);
+    	root = insert_bst(root, x);
+    	
+	}
+    print_bst(root);
+    free_bst(root);
+    return 0;
 }
