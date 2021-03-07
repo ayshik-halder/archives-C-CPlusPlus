@@ -12,9 +12,11 @@ class Complex{
 		void display()
 		{
 			if(img<0)
-				cout << "Complex number : " << real << " - i" << img << endl;
+				cout << "Complex number : " << real  << img << "i " << endl;
 			else
-				cout << "Complex number : " << real << " + i" << img << endl;
+				cout << "Complex number : " << real << " + " << img << "i " << endl;
+				
+			cout << endl;
 		}
 		Complex addComp(Complex C1, Complex C2)
 		{
@@ -43,3 +45,4 @@ int main()
 	
 	return 0;
 }
+

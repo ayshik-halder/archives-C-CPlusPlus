@@ -4,12 +4,12 @@ using namespace std;
 class Height{
 	int feet, inc;
 	public:
-		getData()
+		void getData()
 		{
 			cout << "Enter the Height(in ft and inch): ";
 			cin >> feet >> inc;
 		}
-		display()
+		void display()
 		{
 			cout << "\nThe height is :" << feet << "ft " << inc << "inch";
 			cout << endl;
@@ -45,11 +45,15 @@ int main()
 	H2.display();
 	
 	if(H1 > H2)
-		cout << "\nFirst one heigher than Second one" << endl;
+		cout << "\nFirst one taller than the Second one" << endl;
 	else if(H1 < H2)
-		cout << "\nSecond one heigher than First one" << endl;
+		cout << "\nSecond one taller than First one" << endl;
 	else
 		cout << "\nBoth are same height" << endl;
 		
 	return 0;
 }
+
+
+
+

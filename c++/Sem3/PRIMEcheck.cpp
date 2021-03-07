@@ -20,3 +20,6 @@ int main()
 		cout << "Number " << n << " is PRIME" << endl;
 	return 0;
 }
+
+
+

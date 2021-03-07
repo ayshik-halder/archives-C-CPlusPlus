@@ -37,3 +37,5 @@ int main()
     cout << "Distance D2 : " << D2 << endl;
     return 0;
 }
+
+

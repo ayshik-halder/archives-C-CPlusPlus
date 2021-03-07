@@ -4,12 +4,12 @@ using namespace std;
 class Height{
 	int feet, inc;
 	public:
-		getData()
+		void getData()
 		{
 			cout << "Enter the Height(in ft and inch): ";
 			cin >> feet >> inc;
 		}
-		display()
+		void display()
 		{
 			cout << "\nThe height is :" << feet << "ft " << inc << "inch";
 			cout << endl;
