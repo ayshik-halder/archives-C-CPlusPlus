@@ -1,19 +1,45 @@
 {
 	"version": "2.0.0",
 	"tasks": [
-	  {
-		"type": "shell",
-		"label": "g++ build active file",
-		"command": "/usr/bin/g++",
-		"args": ["-g", "${file}", "-o", "${fileDirname}/${fileBasenameNoExtension}"],
-		"options": {
-		  "cwd": "/usr/bin"
+		{
+			"type": "shell",
+			"label": "g++ build active file",
+			"command": "/usr/bin/g++",
+			"args": [
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "/usr/bin"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
 		},
-		"problemMatcher": ["$gcc"],
-		"group": {
-		  "kind": "build",
-		  "isDefault": true
+		{
+			"type": "cppbuild",
+			"label": "C/C++: clang++ build active file",
+			"command": "/usr/bin/clang++",
+			"args": [
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: /usr/bin/clang++"
 		}
-	  }
 	]
   }

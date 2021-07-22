@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int cmSum(int a1, int b1, int a2, int b2)
+void cmSum(int a1, int b1, int a2, int b2)
 {
 	int a, b;
 	a = a1 + a2;
