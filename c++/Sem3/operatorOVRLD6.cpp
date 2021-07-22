@@ -6,7 +6,7 @@ class Time{
 	public:
 		void getData()
 		{
-			cout << "\nEnter the time(hour minute and second respectedly) : " << endl;
+			cout << "\n Enter the time(hour minute and second respectedly) : " << endl;
 			cin >> Hr >> Min >> Sec;
 		}
 		void display()
